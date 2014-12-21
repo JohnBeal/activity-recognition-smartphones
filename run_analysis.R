@@ -1,8 +1,19 @@
+## As the course project for the Getting and Cleaning Data course of the Data Science specialisation (Coursera), 
+## the HCI HAR dataset is to be downloaded and processed to achieve a number of aims:
+
+## 1) Merge the training and the test sets to create one data set.
+## 2) Extract only the measurements on the mean and standard deviation for each measurement. 
+## 3) Use descriptive activity names to name the activities in the data set
+## 4) Appropriately label the data set with descriptive variable names. 
+## 5) From the data set in step 4, create a second, independent tidy data set with the average of each variable 
+##    for each activity and each subject.
+
 library(dplyr)
         
         ## Download and unzip UCI HAR dataset in a data directory off the working directory 
 
 URL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+
 if(!file.exists("./data")){dir.create("./data")}                ##Create data folder 
 filename<-paste("./data", basename(URL), sep = "/")             ##Generate file name from URL
 if(!file.exists(filename)) {                                    ##Download data if file doesn't already exist locally
@@ -80,5 +91,5 @@ colnames(Test_Train_Data)<-feature_list                 ## Assign modified featu
 Tidy_Dataset<-group_by(Test_Train_Data, Subject_ID, Activity)   ## Create dataset grouped by Subject ID, then Activity
 Tidy_Dataset<-summarise_each(Tidy_Dataset, funs(mean))          ## Collapse dataframe taking the mean for each grouping
 
-write.table(Tidy_Dataset, "Tidy_Dataset.txt", row.names = FALSE) 
+write.table(Tidy_Dataset, "HCI_HAR_TidyDataset.txt", row.names = FALSE) ## Output Tidy_Dataset to file
         
