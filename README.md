@@ -14,35 +14,35 @@ As the course project for the Getting and Cleaning Data course of the Data Scien
 
 The script run_analysis.R performs the following steps:
 
-- Downloads the HCI HAR Dataset from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset  .zip into a data folder created off the working directory (if the data folder does not already exist).
+1. Downloads the HCI HAR Dataset from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset  .zip into a data folder created off the working directory (if the data folder does not already exist).
 
-- Decompresses the data (unzip) into .\data\UCI HAR Dataset and subfolders.
+2. Decompresses the data (unzip) into .\data\UCI HAR Dataset and subfolders.
 
-- Creates lists of the .txt files contained within the parent directory and the test and train subdirectories.
+3. Creates lists of the .txt files contained within the parent directory and the test and train subdirectories.
 
-- Reads data from the subject_test/train, X_test/train and y_test/train files.
+4. Reads data from the subject_test/train, X_test/train and y_test/train files.
 
-- The subject identifiers (from subject_test/train) and activity codes (from y_test/train) were cbinded to the variable data from X_test/train, for each of the test and train datasets.
+5. The subject identifiers (from subject_test/train) and activity codes (from y_test/train) were cbinded to the variable data from X_test/train, for each of the test and train datasets.
 
-- The test and train datasets were cbinded into a single dataset (Test_Train_Data) (in an arbitrary order, and remamined unsorted at this stage).
+6. The test and train datasets were cbinded into a single dataset (Test_Train_Data) (in an arbitrary order, and remamined unsorted at this stage).
 
-- The list of variable names were read from "features.txt". 
+7. The list of variable names were read from "features.txt". 
 
-- Variable names were subsetted by creating a logical vector (column_list) of only those which contained the substring "mean()" or "std()". A list of these names (feature_list) was created and appended with the names of the Subject ID and Activity columns.
+8. Variable names were subsetted by creating a logical vector (column_list) of only those which contained the substring "mean()" or "std()". A list of these names (feature_list) was created and appended with the names of the Subject ID and Activity columns.
 
-- The Test_Train_Data dataset was subsetted according to the logical vector (with additional TRUE elements for the Subject ID and Activity columns).
+9. The Test_Train_Data dataset was subsetted according to the logical vector (with additional TRUE elements for the Subject ID and Activity columns).
 
-- The activity codes and their corresponding activity descriptions were read from "activity_labels.txt".
+10. The activity codes and their corresponding activity descriptions were read from "activity_labels.txt".
 
-- The activity codes in the Test_Train_Data dataset were substituted with the corresponding activity descriptions. 
+11. The activity codes in the Test_Train_Data dataset were substituted with the corresponding activity descriptions. 
 
-- These activity descriptions were converted to a factor, with a level order specified to match the order given in "activity_labels.txt", rather than the default alphabetic ordering.
+12. These activity descriptions were converted to a factor, with a level order specified to match the order given in "activity_labels.txt", rather than the default alphabetic ordering.
 
-- The variable names (feature_list) read from "features.txt" were modified by using gsup with regular expressions to remove parentheses, doubling of "Body" and convert "t" and "f" to "Time-" and "Freq-".
+13. The variable names (feature_list) read from "features.txt" were modified by using gsup with regular expressions to remove parentheses, doubling of "Body" and convert "t" and "f" to "Time-" and "Freq-".
 
-- The modified variable names were applied as column names.
+14. The modified variable names were applied as column names.
 
-- Using the dplyr package, Tidy_Dataset was created by grouping the rows by Subject ID then Activity (group_by), then summarising the measurements for each subject and activity by taking the mean.
+15. Using the dplyr package, Tidy_Dataset was created by grouping the rows by Subject ID then Activity (group_by), then summarising the measurements for each subject and activity by taking the mean.
 
-- The resulting dataset (Tidy_Dataset) was written to "HCI_HAR_TidyDataset.txt".
+16. The resulting dataset (Tidy_Dataset) was written to "HCI_HAR_TidyDataset.txt".
 
