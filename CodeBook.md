@@ -67,6 +67,8 @@ For each signal was calculated:
 mean: mean value
 std: standard deviation
 
+##Summary Transformations:
+
 Upon transformation to the Tidy Dataset, all observations for each variable for each subject and activity were 
 summarised by taking the mean.
 
