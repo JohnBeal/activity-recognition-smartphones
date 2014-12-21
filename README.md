@@ -38,11 +38,11 @@ The script run_analysis.R performs the following steps:
 
 - These activity descriptions were converted to a factor, with a level order specified to match the order given in "activity_labels.txt", rather than the default alphabetic ordering.
 
--The variable names (feature_list) read from "features.txt" were modified by using gsup with regular expressions to remove parentheses, doubling of "Body" and convert "t" and "f" to "Time-" and "Freq-".
+- The variable names (feature_list) read from "features.txt" were modified by using gsup with regular expressions to remove parentheses, doubling of "Body" and convert "t" and "f" to "Time-" and "Freq-".
 
 - The modified variable names were applied as column names.
 
 - Using the dplyr package, Tidy_Dataset was created by grouping the rows by Subject ID then Activity (group_by), then summarising the measurements for each subject and activity by taking the mean.
 
--The resulting dataset (Tidy_Dataset) was written to "HCI_HAR_TidyDataset.txt".
+- The resulting dataset (Tidy_Dataset) was written to "HCI_HAR_TidyDataset.txt".
 
