@@ -27,12 +27,33 @@ The preprocessed data of the HCI HAR Dataset was downloaded from https://d396qus
 respectively, with the more descriptive versions "Time-" and "Freq-". These variable names were then applied to the dataset.
 6. The dataset was ordered by Subject ID and then Activity. An independent, tidy dataset was created by taking the mean of each variable for each activity and each subject.    
 
-##Field Names:
+##Fields:
 
-###Subject_ID    Identication code of experimental subjects
+###Variable designations
+
+-"Time-" denotes time-domain signals
+
+-"Freq-" denotes signals transformed into the frequency domain by Fast Fourier Transform
+
+-"-XYZ" denotes 3-axial signals in the X, Y and Z directions.
+
+###For each signal was calculated:
+
+-mean: mean value
+
+-std: standard deviation
+
+###Summary Transformations:
+
+Upon transformation to the Tidy Dataset, all observations for each variable for each subject and activity were 
+summarised by taking the mean.
+
+###Field Names:
+
+####Subject_ID    Identication code of experimental subjects
 -int: 1-30 
 
-###Activity      Activities performed by experimental subjects
+####Activity      Activities performed by experimental subjects
         1 WALKING
         2 WALKING_UPSTAIRS
         3 wALKING_DOWNSTAIRS
@@ -40,35 +61,55 @@ respectively, with the more descriptive versions "Time-" and "Freq-". These vari
         5 STANDING
         6 LAYING
 
-"Time-" denotes time-domain signals
-"Freq-" denotes signals transformed into the frequency domain by Fast Fourier Transform
-"-XYZ" denotes 3-axial signals in the X, Y and Z directions.
+####Time-BodyAcc-XYZ             
+Body acceleration (time domain)
 
-###Time-BodyAcc-XYZ             Body acceleration (time domain)
-###Time-GravityAcc-XYZ          Gravitational acceleration (time domain)
-###Time-BodyAccJerk-XYZ         Jerk signal derived from body acceleration (time domain)
-###Time-BodyGyro-XYZ            Body angular velocity (time domain)
-###Time-BodyGyroJerk-XYZ        Jerk signal derived from body angular velocity (time domain)
-###Time-BodyAccMag              Magnitude of body acceleration (time domain)  
-###Time-GravityAccMag           Magnitude of gravity acceleration (time domain)
-###Time-BodyAccJerkMag          Magnitude of jerk signal derived from body acceleration (time domain)
-###Time-BodyGyroMag             Magnitide of body angular velocity (time domain)
-###Time-BodyGyroJerkMag         Magnitide of jerk signal derived from body angular velocity (time domain)
-###Freq-BodyAcc-XYZ             Body acceleration (frequency domain)
-###Freq-BodyAccJerk-XYZ         Jerk signal derived from body acceleration (frequency domain)
-###Freq-BodyGyro-XYZ            Body angular velocity (frequency domain)
-###Freq-BodyAccMag              Magnitude of body acceleration (frequency domain)
-###Freq-BodyAccJerkMag          Magnitude of jerk signal derived from body acceleration (frequency domain)
-###Freq-BodyGyroMag             Magnitude of body angular velocity (frequency domain)
-###Freq-BodyGyroJerkMag         Magnitude of jerk signal derived from body angular velocity (frequncy domain)
+####Time-GravityAcc-XYZ          
+Gravitational acceleration (time domain)
 
-For each signal was calculated:
+####Time-BodyAccJerk-XYZ         
+Jerk signal derived from body acceleration (time domain)
 
-mean: mean value
-std: standard deviation
+####Time-BodyGyro-XYZ            
+Body angular velocity (time domain)
 
-##Summary Transformations:
+####Time-BodyGyroJerk-XYZ        
+Jerk signal derived from body angular velocity (time domain)
 
-Upon transformation to the Tidy Dataset, all observations for each variable for each subject and activity were 
-summarised by taking the mean.
+####Time-BodyAccMag              
+Magnitude of body acceleration (time domain)  
+
+####Time-GravityAccMag           
+Magnitude of gravity acceleration (time domain)
+
+####Time-BodyAccJerkMag          
+Magnitude of jerk signal derived from body acceleration (time domain)
+
+####Time-BodyGyroMag             
+Magnitide of body angular velocity (time domain)
+
+####Time-BodyGyroJerkMag         
+Magnitide of jerk signal derived from body angular velocity (time domain)
+
+####Freq-BodyAcc-XYZ             
+Body acceleration (frequency domain)
+
+####Freq-BodyAccJerk-XYZ         
+Jerk signal derived from body acceleration (frequency domain)
+
+####Freq-BodyGyro-XYZ            
+Body angular velocity (frequency domain)
+
+####Freq-BodyAccMag              
+Magnitude of body acceleration (frequency domain)
+
+####Freq-BodyAccJerkMag          
+Magnitude of jerk signal derived from body acceleration (frequency domain)
+
+####Freq-BodyGyroMag             
+Magnitude of body angular velocity (frequency domain)
+
+####Freq-BodyGyroJerkMag         
+Magnitude of jerk signal derived from body angular velocity (frequncy domain)
+
 
